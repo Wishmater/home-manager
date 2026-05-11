@@ -454,7 +454,7 @@ in
 
   # If we run under a Linux system we assume that systemd is
   # available, in particular we assume that systemctl is in PATH.
-  config = mkIf (cfg.enable) {
+  config = mkIf cfg.enable {
     assertions = [
       (lib.hm.assertions.assertPlatform "systemd" pkgs lib.platforms.linux)
     ];
